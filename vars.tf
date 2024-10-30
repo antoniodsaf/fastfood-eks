@@ -19,7 +19,7 @@ variable "node_group" {
 }
 
 variable "instance_type" {
-  default = "t3.medium"
+  default = "t2.small"
 }
 
 variable "principal_arn" {
@@ -28,4 +28,9 @@ variable "principal_arn" {
 
 variable "policy_arn" {
   default = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+}
+
+variable "fastfood_credentials_arn" {
+    type = string
+    default = "arn:aws:secretsmanager:us-east-1:152915761077:secret:fastfood-app-2ppKl7"
 }

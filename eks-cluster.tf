@@ -1,3 +1,8 @@
+data "aws_eks_cluster" "eks-cluster" {
+  depends_on = [aws_eks_cluster.eks-cluster]
+  name = var.cluster_name
+}
+
 resource "aws_eks_cluster" "eks-cluster" {
   name     = var.cluster_name
   role_arn = var.lab_role
